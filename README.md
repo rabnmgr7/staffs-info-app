@@ -1,4 +1,4 @@
-#DOCKER-COMPOSE-NODEJS-EXPRESS-MYSQL
+#STAFFS-INFO-APP
 In this sample, we will look at the functionality provided by Docker for defining and running multi-container Docker applications.
 
 We are going to use 'MySQL' like our specialized database and 'Node.js' as our platform for creating highly performant web applications.
