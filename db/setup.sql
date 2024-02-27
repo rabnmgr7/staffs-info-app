@@ -19,8 +19,8 @@ INSERT INTO EMPLOYEE (FirstName, LastName, Phone, Address, City, FullName, Email
 VALUES ('SYSADMIN', 'SYSADMIN', 945214775, 'Av. Alfonso Ugarte', 'Lima', 'SYSADMIN SYSADMIN', 'sysadmin@gmail.com',
         1, '2011-12-18 13:17:17', 'SYSADMIN');
 INSERT INTO EMPLOYEE (FirstName, LastName, Phone, Address, City, FullName, Email, Pin, CreationDate, EmployeeCode)
-VALUES ('Rabin', 'Lamtage', 9846683648, 'Lumbini', 'Butwal', 'Rabin Lamtage', 'rabinlamtage7@gmail.com',
-        2, '2011-12-18 13:17:17', 'DevOps');
+VALUES ('Ram', 'Thapa', 9846683648, 'Lumbini', 'Butwal', 'Ram Thapa', 'ram777@gmail.com',
+        2, '2011-12-18 13:17:17', 'DEVOPS');
 DROP PROCEDURE IF EXISTS sp_GetEmployee;
 DELIMITER //
 CREATE PROCEDURE sp_GetEmployee()
