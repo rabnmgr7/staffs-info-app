@@ -22,6 +22,7 @@ We are going to use 'MySQL' like our specialized database and 'Node.js' as our p
 <p align="center">
     <img src="Screenshots/employee.png" alt="docker_compose" width="70%">
 </p>
+
 ### IMAGE BUILD
 1. `./img-build.sh`
 
