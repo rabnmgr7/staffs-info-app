@@ -22,13 +22,12 @@ We are going to use 'MySQL' like our specialized database and 'Node.js' as our p
 
 ### INSPECT YOUR MYSQL CONTAINER(to see your database)
 1. docker ps
-2. docker exec -it YOUR_MYSQL_CONTAINER_ID bash
-3. mysql -u root -p
-4. put mysql password
-5. enter 
-6. use employee;
-7. show tables;
-8. describe EMPLOYEE;
+2. docker exec -it YOUR_MYSQL_CONTAINER_ID mysql -u root -p
+3. put mysql password
+4. enter 
+5. use employee;
+6. show tables;
+7. describe EMPLOYEE;
 
 ### TO ALTER THE USER INFORMATION OF MYSQL
 1. ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql-password';
