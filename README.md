@@ -13,10 +13,12 @@ We are going to use 'MySQL' like our specialized database and 'Node.js' as our p
 <p align="center">
     <img src="Screenshots/mysql.jpg" alt="docker_compose" width="50%"/>
 </p>
+
 ### IMAGE BUILD
-`./img-build.sh`
+1. `./img-build.sh`
+
 ### RUN THE PROJECT
-`./run-container.sh`
+2. `./run-container.sh`
 
 ### INSPECT YOUR MYSQL CONTAINER(to see your database)
 1. docker ps
@@ -27,6 +29,5 @@ We are going to use 'MySQL' like our specialized database and 'Node.js' as our p
 6. use employee;
 7. show tables;
 8. describe EMPLOYEE;
-
 
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql-password';
