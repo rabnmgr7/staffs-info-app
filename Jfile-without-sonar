@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    environment {
+        scannerHome = tool 'sonar5.0'
+    }
+    stages {
+        stage('Build&UploadImage') {
+            steps {
+                sh './img-build.sh'
+            }
+        }
+        stage('Deploy') {
+            steps{
+                sh './run-container.sh'
+            }
+        }
+    }
+}
