@@ -4,12 +4,12 @@ pipeline {
         scannerHome = tool 'sonar5.0'
     }
     stages {
-        stage('Build&UploadImage') {
+        stage('Build') {
             steps {
                 sh './img-build.sh'
             }
         }
-        stage('Deploy') {
+        stage('UnitTest') {
             steps{
                 sh './run-container.sh'
             }
