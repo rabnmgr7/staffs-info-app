@@ -14,5 +14,10 @@ pipeline {
                 sh './run-container.sh'
             }
         }
+        stage('PushToRegistry') {
+            steps {
+                sh './img-push.sh'
+            }
+        }
     }
 }
