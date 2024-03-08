@@ -31,7 +31,9 @@ pipeline {
         }
         stage('PushToRegistry') {
             steps {
-                sh './img-push.sh'
+                sh '''
+                chmod +x img-push.sh
+                ./img-push.sh''''
             }
         }
     }
