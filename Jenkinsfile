@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('SonarAnalysis') {
             steps {
+                echo "Doing SonarAnalysis..."
                 withSonarQubeEnv('sonar') {
                     sh """${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=staffs-info \
                         -Dsonar.projectName=staffs-info \
@@ -21,16 +22,19 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh './img-build.sh'
+                echo "Building Docker images..."
+                sh '''./img-build.sh'''
             }
         }
-        stage('UnitTest') {
+        stage('DeployToStaggingEnv') {
             steps{
-                sh './run-container.sh'
+                echo "Deploying app to stagging environment..."
+                sh '''./run-container.sh'''
             }
         }
         stage('PushToRegistry') {
             steps {
+                echo "Pushing docker image to Harbor Registry..."
                 sh '''
                 chmod +x img-push.sh
                 ./img-push.sh''''
