@@ -4,7 +4,7 @@ pipeline {
         scannerHome = tool 'sonar5.0'
     }
     stages {
-        stage('Sonar Analysis') {
+        stage('SonarAnalysis') {
             steps {
                 withSonarQubeEnv('sonar') {
                     sh """${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=staffs-info \
@@ -17,6 +17,21 @@ pipeline {
                         -Dsonar.inclusions='**/Dockerfile'
                     """
                 }
+            }
+        }
+        stage('Build') {
+            steps {
+                sh './img-build.sh'
+            }
+        }
+        stage('UnitTest') {
+            steps{
+                sh './run-container.sh'
+            }
+        }
+        stage('PushToRegistry') {
+            steps {
+                sh './img-push.sh'
             }
         }
     }
