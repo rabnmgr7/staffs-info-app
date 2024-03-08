@@ -9,7 +9,7 @@ pipeline {
                 sh './img-build.sh'
             }
         }
-        stage('UnitTest') {
+        stage('DeployToStaggingEnv') {
             steps{
                 sh './run-container.sh'
             }
