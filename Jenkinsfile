@@ -28,12 +28,18 @@ pipeline {
         }
         stage('DeployToStaggingEnv') {
             steps{
+                timeout(time:2, unit:'MINUTES') {
+                    input message: 'Approve to Deploy to Stagging environment.'
+                }
                 echo "Deploying app to stagging environment..."
                 sh '''./run-container.sh'''
             }
         }
         stage('PushToRegistry') {
             steps {
+                timeout(time:5, unit:'MINUTES') {
+                    input message: 'Approve to push image to registry.'
+                }
                 echo "Pushing docker image to Harbor Registry..."
                 sh '''
                 chmod +x img-push.sh
